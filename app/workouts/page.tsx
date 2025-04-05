@@ -3,6 +3,64 @@ import AudioCard from "@/components/audio-card"
 import PageHeader from "@/components/page-header"
 
 export default function WorkoutsPage() {
+  const workouts = [
+    {
+      title: "Power HIIT Workout",
+      description: "High-intensity interval training for maximum fat burning",
+      duration: "30 min",
+      difficulty: "Intermediate",
+      category: "HIIT",
+      image: "/workouts/power-hiit-thumbnail.jpg",
+      thumbnail: "https://img.youtube.com/vi/ml6cT4AZdqI/maxresdefault.jpg",
+      href: "/workouts/power-hiit-workout"
+    },
+    {
+      title: "Breathwork for Energy",
+      description: "Breathing techniques to boost your energy levels",
+      duration: "15 min",
+      category: "Breathwork",
+      image: "/workouts/breathwork-thumbnail.jpg",
+      thumbnail: "/workouts/breathwork-thumbnail.jpg",
+      href: "/workouts/breathwork-energy"
+    },
+    {
+      title: "Endurance Builder",
+      description: "Progressive training to improve stamina and endurance",
+      duration: "30 min",
+      category: "Endurance",
+      image: "/workouts/endurance-thumbnail.jpg",
+      thumbnail: "/workouts/endurance-thumbnail.jpg",
+      href: "/workouts/endurance-builder"
+    },
+    {
+      title: "Neck Exercise Routine",
+      description: "Relieve tension and improve neck flexibility",
+      duration: "10 min",
+      category: "Stretching",
+      image: "/workouts/neck-exercise-thumbnail.jpg",
+      thumbnail: "/workouts/neck-exercise-thumbnail.jpg",
+      href: "/workouts/neck-exercise"
+    },
+    {
+      title: "Full Body HIIT",
+      description: "Complete workout targeting all major muscle groups",
+      duration: "35 min",
+      category: "HIIT",
+      image: "/workouts/full-body-hiit-thumbnail.jpg",
+      thumbnail: "/workouts/full-body-hiit-thumbnail.jpg",
+      href: "/workouts/full-body-hiit"
+    },
+    {
+      title: "Recovery Stretching",
+      description: "Gentle stretches to aid muscle recovery",
+      duration: "20 min",
+      category: "Stretching",
+      image: "/workouts/recovery-stretching-thumbnail.jpg",
+      thumbnail: "/workouts/recovery-stretching-thumbnail.jpg",
+      href: "/workouts/recovery-stretching"
+    }
+  ]
+
   return (
     <div className="container mx-auto px-4 py-8">
       <PageHeader
@@ -21,68 +79,76 @@ export default function WorkoutsPage() {
 
         <TabsContent value="all" className="mt-6">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <AudioCard
-              title="Power HIIT Workout"
-              description="High-intensity interval training for maximum results"
-              duration="25 min"
-              image="/placeholder.svg?height=200&width=400"
-              href="/workouts/power-hiit"
-            />
-            <AudioCard
-              title="Breathwork for Energy"
-              description="Breathing techniques to boost your energy levels"
-              duration="15 min"
-              image="/placeholder.svg?height=200&width=400"
-              href="/workouts/breathwork-energy"
-            />
-            <AudioCard
-              title="Endurance Builder"
-              description="Progressive training to improve stamina and endurance"
-              duration="30 min"
-              image="/placeholder.svg?height=200&width=400"
-              href="/workouts/endurance-builder"
-            />
-            <AudioCard
-              title="Neck Exercise Routine"
-              description="Relieve tension and improve neck flexibility"
-              duration="10 min"
-              image="/placeholder.svg?height=200&width=400"
-              href="/workouts/neck-exercise"
-            />
-            <AudioCard
-              title="Full Body HIIT"
-              description="Complete workout targeting all major muscle groups"
-              duration="35 min"
-              image="/placeholder.svg?height=200&width=400"
-              href="/workouts/full-body-hiit"
-            />
-            <AudioCard
-              title="Recovery Stretching"
-              description="Gentle stretches to aid muscle recovery"
-              duration="20 min"
-              image="/placeholder.svg?height=200&width=400"
-              href="/workouts/recovery-stretching"
-            />
+            {workouts.map((workout) => (
+              <AudioCard
+                key={workout.title}
+                title={workout.title}
+                description={workout.description}
+                duration={workout.duration}
+                image={workout.thumbnail}
+                href={workout.href}
+              />
+            ))}
           </div>
         </TabsContent>
 
-        {/* Other tab contents would be similar */}
         <TabsContent value="hiit" className="mt-6">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <AudioCard
-              title="Power HIIT Workout"
-              description="High-intensity interval training for maximum results"
-              duration="25 min"
-              image="/placeholder.svg?height=200&width=400"
-              href="/workouts/power-hiit"
-            />
-            <AudioCard
-              title="Full Body HIIT"
-              description="Complete workout targeting all major muscle groups"
-              duration="35 min"
-              image="/placeholder.svg?height=200&width=400"
-              href="/workouts/full-body-hiit"
-            />
+            {workouts.filter(workout => workout.category === "HIIT").map((workout) => (
+              <AudioCard
+                key={workout.title}
+                title={workout.title}
+                description={workout.description}
+                duration={workout.duration}
+                image={workout.thumbnail}
+                href={workout.href}
+              />
+            ))}
+          </div>
+        </TabsContent>
+
+        <TabsContent value="breathwork" className="mt-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {workouts.filter(workout => workout.category === "Breathwork").map((workout) => (
+              <AudioCard
+                key={workout.title}
+                title={workout.title}
+                description={workout.description}
+                duration={workout.duration}
+                image={workout.thumbnail}
+                href={workout.href}
+              />
+            ))}
+          </div>
+        </TabsContent>
+
+        <TabsContent value="endurance" className="mt-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {workouts.filter(workout => workout.category === "Endurance").map((workout) => (
+              <AudioCard
+                key={workout.title}
+                title={workout.title}
+                description={workout.description}
+                duration={workout.duration}
+                image={workout.thumbnail}
+                href={workout.href}
+              />
+            ))}
+          </div>
+        </TabsContent>
+
+        <TabsContent value="stretching" className="mt-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {workouts.filter(workout => workout.category === "Stretching").map((workout) => (
+              <AudioCard
+                key={workout.title}
+                title={workout.title}
+                description={workout.description}
+                duration={workout.duration}
+                image={workout.thumbnail}
+                href={workout.href}
+              />
+            ))}
           </div>
         </TabsContent>
       </Tabs>
