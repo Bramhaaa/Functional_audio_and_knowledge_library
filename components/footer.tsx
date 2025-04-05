@@ -68,7 +68,11 @@ export default function Footer() {
             <h4 className="font-medium mb-4">Subscribe</h4>
             <p className="text-sm text-muted-foreground mb-4">Get updates on new content and features.</p>
             <div className="flex">
-              <input type="email" placeholder="Your email" className="px-3 py-2 border rounded-l-md w-full text-sm" />
+              <input 
+                type="email" 
+                placeholder="Your email" 
+                className="px-3 py-2 border rounded-l-md w-full text-sm bg-background" 
+              />
               <button className="bg-primary text-primary-foreground px-3 py-2 rounded-r-md text-sm">Subscribe</button>
             </div>
           </div>

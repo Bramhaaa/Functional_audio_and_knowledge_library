@@ -12,18 +12,19 @@ interface PageProps {
 export default function KnowledgeTalkDetailPage({ params }: PageProps) {
   // In a real app, you would fetch this data based on the slug
   const talk = {
-    title: "Productivity Mastery",
+    title: "The Power of Believing You Can Improve",
     description:
-      "Learn practical techniques to maximize your daily output and achieve more in less time. This talk covers time management, prioritization, deep work strategies, and how to overcome procrastination.",
-    duration: "18 min",
+      "Carol Dweck researches 'growth mindset' — the idea that we can grow our brain's capacity to learn and to solve problems. In this talk, she describes two ways to think about a problem that's slightly too hard for you to solve. Are you not smart enough to solve it ... or have you just not solved it yet? A great introduction to this influential field.",
+    duration: "10 min",
     image: "/placeholder.svg?height=400&width=800",
-    category: "Productivity",
-    speaker: "Dr. Emma Wilson",
+    category: "Mindset",
+    speaker: "Carol Dweck",
     keyPoints: [
-      "The 80/20 principle for maximum output",
-      "Time blocking techniques",
-      "Managing digital distractions",
-      "Creating effective work environments",
+      "The power of 'not yet' vs. failure",
+      "Growth mindset vs. fixed mindset",
+      "How effort and difficulty lead to learning",
+      "Transforming education through mindset",
+      "Real-world examples of growth mindset success"
     ],
   }
 
@@ -37,13 +38,17 @@ export default function KnowledgeTalkDetailPage({ params }: PageProps) {
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
         <div className="lg:col-span-2">
           <div className="relative aspect-video rounded-xl overflow-hidden mb-6">
-            <Image src={talk.image || "/placeholder.svg"} alt={talk.title} fill className="object-cover" />
-            <div className="absolute inset-0 flex items-center justify-center">
-              <Button size="lg" className="rounded-full gap-2">
-                <Play className="h-5 w-5 fill-white" />
-                Play Talk
-              </Button>
-            </div>
+            <iframe
+              width="100%"
+              height="100%"
+              src="https://www.youtube.com/embed/_X0mgOOSpLU"
+              title="The power of believing that you can improve | Carol Dweck | TED"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
+              className="absolute inset-0"
+            ></iframe>
           </div>
 
           <h1 className="text-3xl font-bold mb-2">{talk.title}</h1>
@@ -83,9 +88,10 @@ export default function KnowledgeTalkDetailPage({ params }: PageProps) {
 
             <h2>Who this is for</h2>
             <p>
-              This talk is ideal for professionals, students, entrepreneurs, and anyone looking to improve their
-              productivity and time management skills. Whether you're struggling with procrastination or simply want to
-              optimize your workflow, you'll find valuable insights and actionable strategies.
+              This talk is essential viewing for educators, parents, students, and anyone interested in personal development. 
+              Whether you're looking to improve your own learning abilities, help others develop their potential, or understand 
+              how mindset affects achievement, Carol Dweck's insights on growth mindset will provide valuable perspectives 
+              and practical applications for both personal and professional growth.
             </p>
           </div>
         </div>
@@ -101,8 +107,7 @@ export default function KnowledgeTalkDetailPage({ params }: PageProps) {
             </div>
 
             <p className="text-sm text-muted-foreground mb-6">
-              Dr. Wilson is a renowned productivity researcher and author of several bestselling books on time
-              management and personal effectiveness.
+              Carol Dweck is a pioneering researcher in the field of motivation, personality, and development. She is the Lewis and Virginia Eaton Professor of Psychology at Stanford University and the author of the bestselling book "Mindset: The New Psychology of Success."
             </p>
 
             <h3 className="font-medium mb-3">Related Talks</h3>

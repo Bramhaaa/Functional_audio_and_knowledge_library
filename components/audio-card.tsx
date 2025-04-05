@@ -15,7 +15,14 @@ export default function AudioCard({ title, description, duration, image, href }:
     <Link href={href} className="group">
       <div className="rounded-xl overflow-hidden border transition-all hover:shadow-md">
         <div className="relative aspect-video">
-          <Image src={image || "/placeholder.svg"} alt={title} fill className="object-cover" />
+          <Image 
+            src={image} 
+            alt={title} 
+            fill 
+            className="object-cover" 
+            unoptimized={image.startsWith('http')}
+            priority={image.startsWith('http')}
+          />
           <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
             <div className="bg-white rounded-full p-3">
               <Play className="h-6 w-6 fill-primary text-primary" />

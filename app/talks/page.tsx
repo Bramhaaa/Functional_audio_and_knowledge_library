@@ -22,11 +22,11 @@ export default function KnowledgeTalksPage() {
         <TabsContent value="all" className="mt-6">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <AudioCard
-              title="Productivity Mastery"
-              description="Techniques to maximize your daily output"
-              duration="18 min"
-              image="/placeholder.svg?height=200&width=400"
-              href="/talks/productivity-mastery"
+              title="The Power of Believing You Can Improve"
+              description="Carol Dweck's groundbreaking research on growth mindset"
+              duration="10 min"
+              image="https://img.youtube.com/vi/_X0mgOOSpLU/maxresdefault.jpg"
+              href="/talks/growth-mindset"
             />
             <AudioCard
               title="Growth Mindset Development"
@@ -70,11 +70,11 @@ export default function KnowledgeTalksPage() {
         <TabsContent value="productivity" className="mt-6">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <AudioCard
-              title="Productivity Mastery"
-              description="Techniques to maximize your daily output"
-              duration="18 min"
-              image="/placeholder.svg?height=200&width=400"
-              href="/talks/productivity-mastery"
+              title="The Power of Believing You Can Improve"
+              description="Carol Dweck's groundbreaking research on growth mindset"
+              duration="10 min"
+              image="https://img.youtube.com/vi/_X0mgOOSpLU/maxresdefault.jpg"
+              href="/talks/growth-mindset"
             />
             <AudioCard
               title="Deep Work Strategies"
