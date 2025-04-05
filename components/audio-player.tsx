@@ -24,7 +24,7 @@ export default function AudioPlayer() {
   useEffect(() => {
     setCurrentTrack({
       title: "Morning Mindfulness",
-      artist: "SoundMind",
+      artist: "PARA",
       duration: 600, // 10 minutes in seconds
       src: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3", // Sample audio file
     })

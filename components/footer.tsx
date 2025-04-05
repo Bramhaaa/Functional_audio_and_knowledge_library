@@ -6,7 +6,7 @@ export default function Footer() {
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
-            <h3 className="font-bold text-lg mb-4">SoundMind</h3>
+            <h3 className="font-bold text-lg mb-4">PARA</h3>
             <p className="text-sm text-muted-foreground">
               Enhance your mind, body, and spirit with our curated audio collection.
             </p>

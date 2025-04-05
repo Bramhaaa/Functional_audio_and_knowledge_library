@@ -2,7 +2,7 @@
 
 import * as React from "react"
 import Link from "next/link"
-import { usePathname, useRouter } from "next/navigation"
+import { usePathname } from "next/navigation"
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -37,9 +37,8 @@ const navItems = [
   },
 ]
 
-export default function Header() {
+export function SharedNav() {
   const pathname = usePathname()
-  const router = useRouter()
   const [isScrolled, setIsScrolled] = React.useState(false)
 
   React.useEffect(() => {
@@ -50,14 +49,6 @@ export default function Header() {
     window.addEventListener("scroll", handleScroll)
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
-
-  const handleNavigation = (href: string) => {
-    if (href === "/library") {
-      window.location.href = "http://localhost:3001"
-    } else {
-      window.location.href = `http://localhost:3000${href}`
-    }
-  }
 
   return (
     <header
@@ -72,17 +63,17 @@ export default function Header() {
         <div className="mr-4 hidden md:flex">
           <Link href="/" className="mr-6 flex items-center space-x-2">
             <div className="h-8 w-8 rounded-full bg-gradient-to-br from-blue-500 to-violet-600 flex items-center justify-center">
-              <span className="font-bold text-white">S</span>
+              <span className="font-bold text-white">P</span>
             </div>
-            <span className="font-bold text-xl hidden md:inline-block">SoundMind</span>
+            <span className="font-bold text-xl hidden md:inline-block">PARA</span>
           </Link>
           <nav className="flex items-center space-x-6">
             {navItems.map((item) => {
               const isActive = pathname === item.href
               return (
-                <button
+                <Link
                   key={item.href}
-                  onClick={() => handleNavigation(item.href)}
+                  href={item.href}
                   className={cn(
                     "group flex items-center text-sm font-medium transition-colors",
                     isActive ? "text-foreground" : "text-muted-foreground hover:text-foreground",
@@ -93,7 +84,7 @@ export default function Header() {
                   />
                   {item.title}
                   {isActive && <div className="absolute -bottom-[19px] left-0 right-0 h-[2px] bg-blue-500" />}
-                </button>
+                </Link>
               )
             })}
           </nav>
@@ -122,4 +113,3 @@ export default function Header() {
     </header>
   )
 }
-

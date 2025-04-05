@@ -1,0 +1,33 @@
+import { VideoCard } from "@/components/video-card"
+import { videoLibrary } from "@/lib/video-library"
+import { Search } from "lucide-react"
+
+export default function LibraryPage() {
+  return (
+    <div className="container mx-auto px-4 py-8">
+      <div className="mb-8">
+        <h1 className="text-3xl font-bold mb-2">Video Library</h1>
+        <p className="text-muted-foreground">
+          Explore our collection of guided meditations and wellness content
+        </p>
+      </div>
+
+      <div className="mb-6">
+        <div className="relative">
+          <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+          <input
+            type="text"
+            placeholder="Search videos..."
+            className="w-full pl-10 pr-4 py-2 rounded-lg border bg-background"
+          />
+        </div>
+      </div>
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {videoLibrary.map((video) => (
+          <VideoCard key={video.id} video={video} />
+        ))}
+      </div>
+    </div>
+  )
+} 
