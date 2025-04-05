@@ -20,24 +20,24 @@ export default function FocusSoundsPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <AudioCard
               title="Alpha Waves for Focus"
-              description="8-12 Hz frequencies to enhance concentration"
-              duration="60 min"
-              image="/placeholder.svg?height=200&width=400"
-              href="/focus/alpha-waves"
+              description="Study Music Alpha Waves: Relaxing Studying Music, Brain Power, Focus Concentration Music"
+              duration="161 min"
+              image="https://img.youtube.com/vi/WPni755-Krg/maxresdefault.jpg"
+              href="/focus/alpha-waves-focus"
             />
             <AudioCard
               title="Theta Meditation"
-              description="4-8 Hz frequencies for deep relaxation and creativity"
-              duration="45 min"
-              image="/placeholder.svg?height=200&width=400"
+              description="The Hidden Valley: Ambient Relaxing Music for Stress Relief, Sleep & Meditation"
+              duration="180 min"
+              image="https://img.youtube.com/vi/2OEL4P1Rz04/maxresdefault.jpg"
               href="/focus/theta-meditation"
             />
             <AudioCard
-              title="Rainforest Ambience"
-              description="Immersive natural sounds for deep work"
-              duration="120 min"
-              image="/placeholder.svg?height=200&width=400"
-              href="/focus/rainforest"
+              title="Beethoven - Moonlight Sonata (FULL)"
+              description="Beethoven - Moonlight Sonata (FULL)"
+              duration="15 min"
+              image="https://img.youtube.com/vi/4Tr0otuiQuU/maxresdefault.jpg"
+              href="/focus/rainforest-ambience"
             />
             <AudioCard
               title="Ocean Waves"
@@ -68,10 +68,10 @@ export default function FocusSoundsPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <AudioCard
               title="Rainforest Ambience"
-              description="Immersive natural sounds for deep work"
-              duration="120 min"
-              image="/placeholder.svg?height=200&width=400"
-              href="/focus/rainforest"
+              description="Beethoven - Moonlight Sonata (FULL)"
+              duration="15 min"
+              image="https://img.youtube.com/vi/4Tr0otuiQuU/maxresdefault.jpg"
+              href="/focus/rainforest-ambience"
             />
             <AudioCard
               title="Ocean Waves"
