@@ -20,16 +20,16 @@ export default function WorkoutsPage() {
       duration: "15 min",
       category: "Breathwork",
       image: "/workouts/breathwork-thumbnail.jpg",
-      thumbnail: "/workouts/breathwork-thumbnail.jpg",
+      thumbnail: "https://img.youtube.com/vi/FJJazKtH_9I/maxresdefault.jpg",
       href: "/workouts/breathwork-energy"
     },
     {
       title: "Endurance Builder",
       description: "Progressive training to improve stamina and endurance",
-      duration: "30 min",
+      duration: "20 min",
       category: "Endurance",
       image: "/workouts/endurance-thumbnail.jpg",
-      thumbnail: "/workouts/endurance-thumbnail.jpg",
+      thumbnail: "https://img.youtube.com/vi/UBMk30rjy0o/maxresdefault.jpg",
       href: "/workouts/endurance-builder"
     },
     {
