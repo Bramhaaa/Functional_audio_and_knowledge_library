@@ -29,11 +29,11 @@ export default function MeditationsPage() {
               href="/meditations/focus-meditation"
             />
             <AudioCard
-              title="Deep Relaxation"
-              description="Release tension and find inner peace"
+              title="Guided Meditation for Healing & Recovery"
+              description="A 15-minute meditation to help you reset, reconstruct, and realign yourself through healing energy"
               duration="15 min"
-              image="/placeholder.svg?height=200&width=400"
-              href="/meditations/deep-relaxation"
+              image={`https://img.youtube.com/vi/7g96Zq9NSqo/maxresdefault.jpg`}
+              href="/meditations/healing-meditation"
             />
             <AudioCard
               title="Healing Visualization"

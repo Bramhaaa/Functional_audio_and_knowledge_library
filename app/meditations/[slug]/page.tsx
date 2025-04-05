@@ -11,30 +11,34 @@ interface PageProps {
 
 export default function MeditationDetailPage({ params }: PageProps) {
   const meditation = {
-    title: "Focus Meditation with Music",
+    title: "Guided Meditation for Healing & Recovery",
     description:
-      "A guided meditation that helps strengthen your focus muscles through music. This practice teaches you to maintain attention on the music, training your brain to stay present and focused. Perfect for beginners and experienced meditators alike.",
-    duration: "5 min",
+      "A powerful 15-minute meditation designed to help you reset, reconstruct, and realign yourself. This practice uses visualization of healing white light to cleanse and regenerate your body, mind, and soul. Perfect for those seeking physical, emotional, or spiritual healing.",
+    duration: "15 min",
     image: "/placeholder.svg?height=400&width=800",
-    category: "Focus",
-    instructor: "Mindful Movement",
-    instructorBio: "Mindful Movement creates accessible meditation practices that help people develop focus and mindfulness. Their guided meditations combine music and instruction to create an effective practice for mental training.",
+    category: "Healing",
+    instructor: "Meditation Channel",
+    instructorBio: "This meditation channel creates transformative guided meditations that help people heal and find balance in their lives. Their practices combine ancient wisdom with modern techniques to facilitate deep healing and personal growth.",
     benefits: [
-      "Strengthens focus muscles",
-      "Improves ability to maintain attention",
-      "Trains the brain to stay present",
-      "Accessible for all experience levels",
-      "Can be practiced anywhere with headphones"
+      "Promotes physical and emotional healing",
+      "Cleanses and regenerates the body",
+      "Strengthens the mind-body connection",
+      "Brings balance and alignment",
+      "Enhances self-healing capabilities"
     ],
     preparation: [
-      "Find a quiet, comfortable place",
-      "Use headphones for optimal experience (recommended)",
-      "Sit in a comfortable position with balanced posture",
-      "Let your spine straighten and lengthen",
-      "Place hands comfortably in your lap",
-      "Close your eyes softly"
+      "Find a comfortable seated position on the ground or any surface",
+      "Close your eyes and focus on your breath",
+      "Allow yourself to come into the present moment",
+      "Be open to receiving healing energy",
+      "Let go of any expectations and surrender to the process"
     ],
-    videoId: "zSkFFW--Ma0"
+    affirmations: [
+      "I am healthy",
+      "I am strong",
+      "I am guided towards healing and balance"
+    ],
+    videoId: "7g96Zq9NSqo"
   }
 
   return (
@@ -50,7 +54,7 @@ export default function MeditationDetailPage({ params }: PageProps) {
             <iframe
               width="100%"
               height="100%"
-              src={`https://www.youtube.com/embed/${meditation.videoId}?si=P22aCf7fO21LX8dW`}
+              src={`https://www.youtube.com/embed/${meditation.videoId}`}
               title={meditation.title}
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -102,13 +106,20 @@ export default function MeditationDetailPage({ params }: PageProps) {
               ))}
             </ul>
 
+            <h2>Healing Affirmations</h2>
+            <ul>
+              {meditation.affirmations.map((affirmation, index) => (
+                <li key={index}>{affirmation}</li>
+              ))}
+            </ul>
+
             <h2>Practice Tips</h2>
             <ul>
-              <li>Don't judge yourself if your mind wanders - it's natural</li>
-              <li>Gently return your focus to the music when you notice your mind has wandered</li>
-              <li>Even 5-10 seconds of focused attention is a win</li>
-              <li>Regular practice will improve your ability to focus</li>
-              <li>This skill will carry over into other aspects of your life</li>
+              <li>Stay connected to the healing white light visualization</li>
+              <li>Notice any tingling sensations or colors that may appear</li>
+              <li>Allow the light to penetrate every cell of your body</li>
+              <li>Repeat the affirmations softly to yourself</li>
+              <li>Stay in the healing energy for as long as needed</li>
             </ul>
           </div>
         </div>
