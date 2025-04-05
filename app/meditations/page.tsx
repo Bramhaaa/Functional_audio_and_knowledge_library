@@ -26,7 +26,7 @@ export default function MeditationsPage() {
               description="A guided meditation that helps strengthen your focus muscles through music"
               duration="5 min"
               image={`https://img.youtube.com/vi/zSkFFW--Ma0/maxresdefault.jpg`}
-              href="/meditations/focus-meditation"
+              href="/meditations/focus-meditation-with-music"
             />
             <AudioCard
               title="Guided Meditation for Healing & Recovery"
@@ -36,11 +36,11 @@ export default function MeditationsPage() {
               href="/meditations/healing-meditation"
             />
             <AudioCard
-              title="Healing Visualization"
-              description="Support your body's natural healing process"
-              duration="20 min"
-              image="/placeholder.svg?height=200&width=400"
-              href="/meditations/healing-visualization"
+              title="Blissful Deep Relaxation"
+              description="A guided meditation journey into a deep state of relaxation and calmness"
+              duration="12 min"
+              image={`https://img.youtube.com/vi/Jyy0ra2WcQQ/maxresdefault.jpg`}
+              href="/meditations/blissful-deep-relaxation"
             />
             <AudioCard
               title="Focus Enhancement"
@@ -69,6 +69,13 @@ export default function MeditationsPage() {
         {/* Other tab contents would be similar */}
         <TabsContent value="focus" className="mt-6">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <AudioCard
+              title="Focus Meditation with Music"
+              description="A guided meditation that helps strengthen your focus muscles through music"
+              duration="5 min"
+              image={`https://img.youtube.com/vi/zSkFFW--Ma0/maxresdefault.jpg`}
+              href="/meditations/focus-meditation-with-music"
+            />
             <AudioCard
               title="Focus Enhancement"
               description="Sharpen your concentration and mental clarity"
