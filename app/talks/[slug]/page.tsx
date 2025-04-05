@@ -9,16 +9,16 @@ interface PageProps {
   }
 }
 
-export default function KnowledgeTalkDetailPage({ params }: PageProps) {
-  // In a real app, you would fetch this data based on the slug
-  const talk = {
+const talks = {
+  "power-of-believing": {
     title: "The Power of Believing You Can Improve",
     description:
       "Carol Dweck researches 'growth mindset' — the idea that we can grow our brain's capacity to learn and to solve problems. In this talk, she describes two ways to think about a problem that's slightly too hard for you to solve. Are you not smart enough to solve it ... or have you just not solved it yet? A great introduction to this influential field.",
     duration: "10 min",
-    image: "/placeholder.svg?height=400&width=800",
+    image: "https://img.youtube.com/vi/_X0mgOOSpLU/maxresdefault.jpg",
     category: "Mindset",
     speaker: "Carol Dweck",
+    videoId: "_X0mgOOSpLU",
     keyPoints: [
       "The power of 'not yet' vs. failure",
       "Growth mindset vs. fixed mindset",
@@ -26,6 +26,121 @@ export default function KnowledgeTalkDetailPage({ params }: PageProps) {
       "Transforming education through mindset",
       "Real-world examples of growth mindset success"
     ],
+  },
+  "emotional-intelligence-goleman": {
+    title: "Daniel Goleman Introduces Emotional Intelligence",
+    description:
+      "Daniel Goleman introduces the concept of emotional intelligence, explaining its four key domains: self-awareness, self-management, empathy, and social skills. He discusses how emotional intelligence develops in the brain, its impact on learning and success, and why it should be taught systematically in schools. Goleman also addresses gender differences in emotional intelligence and how it manifests across different cultures.",
+    duration: "5 min",
+    image: "https://img.youtube.com/vi/Y7m9eNoB3NU/maxresdefault.jpg",
+    category: "Emotional Intelligence",
+    speaker: "Daniel Goleman",
+    videoId: "Y7m9eNoB3NU",
+    keyPoints: [
+      "The four domains of emotional intelligence: self-awareness, self-management, empathy, and social skills",
+      "How emotional intelligence develops in the brain",
+      "The impact of emotional intelligence on learning and success",
+      "The importance of teaching emotional intelligence in schools",
+      "Gender differences and cultural variations in emotional intelligence"
+    ],
+  },
+  "self-compassion": {
+    title: "The Space Between Self-Esteem and Self Compassion",
+    description:
+      "Kristin Neff explores the transformative power of self-compassion and its benefits over self-esteem. She shares her personal journey with self-compassion and explains how it differs from self-esteem, why it's more beneficial, and how to practice it. Neff discusses the three core components of self-compassion: self-kindness, common humanity, and mindfulness, and how they contribute to mental well-being.",
+    duration: "18 min",
+    image: "https://img.youtube.com/vi/IvtZBUSplr4/maxresdefault.jpg",
+    category: "Wellness",
+    speaker: "Kristin Neff",
+    videoId: "IvtZBUSplr4",
+    keyPoints: [
+      "The difference between self-esteem and self-compassion",
+      "The three core components of self-compassion: self-kindness, common humanity, and mindfulness",
+      "How self-compassion reduces stress and improves mental well-being",
+      "The role of self-compassion in motivation and personal growth",
+      "Practical ways to cultivate self-compassion in daily life"
+    ],
+  },
+  "emotional-intelligence": {
+    title: "Emotional Intelligence",
+    description: "Understanding and managing emotions effectively",
+    duration: "25 min",
+    image: "/placeholder.svg?height=400&width=800",
+    category: "Emotional Intelligence",
+    speaker: "Emotional Intelligence Expert",
+    videoId: "",
+    keyPoints: [
+      "Understanding emotional intelligence",
+      "Developing self-awareness",
+      "Managing emotions effectively",
+      "Building empathy skills",
+      "Improving social relationships"
+    ],
+  },
+  "leadership-principles": {
+    title: "Leadership Principles",
+    description: "Core concepts for effective leadership",
+    duration: "30 min",
+    image: "/placeholder.svg?height=400&width=800",
+    category: "Leadership",
+    speaker: "Leadership Expert",
+    videoId: "",
+    keyPoints: [
+      "Core leadership principles",
+      "Building effective teams",
+      "Communication strategies",
+      "Decision-making frameworks",
+      "Leading through change"
+    ],
+  },
+  "deep-work-strategies": {
+    title: "Deep Work Strategies",
+    description: "Achieve flow state and maximize focus",
+    duration: "20 min",
+    image: "/placeholder.svg?height=400&width=800",
+    category: "Productivity",
+    speaker: "Productivity Expert",
+    videoId: "",
+    keyPoints: [
+      "Understanding deep work",
+      "Creating focus rituals",
+      "Managing distractions",
+      "Building concentration stamina",
+      "Measuring deep work effectiveness"
+    ],
+  },
+  "stress-management": {
+    title: "Stress Management",
+    description: "Practical techniques to reduce and manage stress",
+    duration: "15 min",
+    image: "/placeholder.svg?height=400&width=800",
+    category: "Wellness",
+    speaker: "Wellness Expert",
+    videoId: "",
+    keyPoints: [
+      "Understanding stress triggers",
+      "Mindfulness techniques",
+      "Physical stress relief",
+      "Cognitive restructuring",
+      "Building resilience"
+    ],
+  }
+}
+
+export default function KnowledgeTalkDetailPage({ params }: PageProps) {
+  const talk = talks[params.slug as keyof typeof talks]
+
+  if (!talk) {
+    return (
+      <div className="container mx-auto px-4 py-8">
+        <Link href="/talks" className="inline-flex items-center text-sm mb-6 hover:text-primary">
+          <ArrowLeft className="mr-2 h-4 w-4" />
+          Back to Knowledge Talks
+        </Link>
+        <h1 className="text-3xl font-bold mb-4">Talk not found</h1>
+        <p>The requested talk could not be found. Please check the URL or return to the talks page.</p>
+      </div>
+    )
   }
 
   return (
@@ -38,17 +153,23 @@ export default function KnowledgeTalkDetailPage({ params }: PageProps) {
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
         <div className="lg:col-span-2">
           <div className="relative aspect-video rounded-xl overflow-hidden mb-6">
-            <iframe
-              width="100%"
-              height="100%"
-              src="https://www.youtube.com/embed/_X0mgOOSpLU"
-              title="The power of believing that you can improve | Carol Dweck | TED"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerPolicy="strict-origin-when-cross-origin"
-              allowFullScreen
-              className="absolute inset-0"
-            ></iframe>
+            {talk.videoId ? (
+              <iframe
+                width="100%"
+                height="100%"
+                src={`https://www.youtube.com/embed/${talk.videoId}`}
+                title={talk.title}
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerPolicy="strict-origin-when-cross-origin"
+                allowFullScreen
+                className="absolute inset-0"
+              ></iframe>
+            ) : (
+              <div className="absolute inset-0 bg-gray-200 flex items-center justify-center">
+                <span className="text-gray-500">Video coming soon</span>
+              </div>
+            )}
           </div>
 
           <h1 className="text-3xl font-bold mb-2">{talk.title}</h1>
@@ -88,10 +209,8 @@ export default function KnowledgeTalkDetailPage({ params }: PageProps) {
 
             <h2>Who this is for</h2>
             <p>
-              This talk is essential viewing for educators, parents, students, and anyone interested in personal development. 
-              Whether you're looking to improve your own learning abilities, help others develop their potential, or understand 
-              how mindset affects achievement, Carol Dweck's insights on growth mindset will provide valuable perspectives 
-              and practical applications for both personal and professional growth.
+              This talk is designed for anyone interested in {talk.category.toLowerCase()}, whether you're looking to improve your own skills, 
+              help others develop their potential, or understand how these concepts affect personal and professional growth.
             </p>
           </div>
         </div>
@@ -102,31 +221,26 @@ export default function KnowledgeTalkDetailPage({ params }: PageProps) {
               <div className="w-12 h-12 rounded-full bg-gray-200 mr-3"></div>
               <div>
                 <h3 className="font-medium">{talk.speaker}</h3>
-                <p className="text-sm text-muted-foreground">Productivity Expert</p>
+                <p className="text-sm text-muted-foreground">{talk.category} Expert</p>
               </div>
             </div>
 
             <p className="text-sm text-muted-foreground mb-6">
-              Carol Dweck is a pioneering researcher in the field of motivation, personality, and development. She is the Lewis and Virginia Eaton Professor of Psychology at Stanford University and the author of the bestselling book "Mindset: The New Psychology of Success."
+              {talk.speaker} is an expert in the field of {talk.category.toLowerCase()}, with extensive experience in teaching and applying these principles in real-world settings.
             </p>
 
             <h3 className="font-medium mb-3">Related Talks</h3>
             <ul className="space-y-3">
-              <li>
-                <Link href="/talks/deep-work" className="text-sm hover:text-primary">
-                  Deep Work Strategies (20 min)
-                </Link>
-              </li>
-              <li>
-                <Link href="/talks/growth-mindset" className="text-sm hover:text-primary">
-                  Growth Mindset Development (22 min)
-                </Link>
-              </li>
-              <li>
-                <Link href="/talks/stress-management" className="text-sm hover:text-primary">
-                  Stress Management (15 min)
-                </Link>
-              </li>
+              {Object.entries(talks)
+                .filter(([key]) => key !== params.slug)
+                .slice(0, 3)
+                .map(([key, relatedTalk]) => (
+                  <li key={key}>
+                    <Link href={`/talks/${key}`} className="text-sm hover:text-primary">
+                      {relatedTalk.title} ({relatedTalk.duration})
+                    </Link>
+                  </li>
+                ))}
             </ul>
           </div>
         </div>

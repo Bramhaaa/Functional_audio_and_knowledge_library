@@ -26,14 +26,21 @@ export default function KnowledgeTalksPage() {
               description="Carol Dweck's groundbreaking research on growth mindset"
               duration="10 min"
               image="https://img.youtube.com/vi/_X0mgOOSpLU/maxresdefault.jpg"
-              href="/talks/growth-mindset"
+              href="/talks/power-of-believing"
             />
             <AudioCard
-              title="Growth Mindset Development"
-              description="Cultivate a mindset for continuous improvement"
-              duration="22 min"
-              image="/placeholder.svg?height=200&width=400"
-              href="/talks/growth-mindset"
+              title="Daniel Goleman Introduces Emotional Intelligence"
+              description="Understanding the four domains of emotional intelligence and its impact on success"
+              duration="5 min"
+              image="https://img.youtube.com/vi/Y7m9eNoB3NU/maxresdefault.jpg"
+              href="/talks/emotional-intelligence-goleman"
+            />
+            <AudioCard
+              title="The Space Between Self-Esteem and Self Compassion"
+              description="Kristin Neff explores the transformative power of self-compassion and its benefits over self-esteem"
+              duration="18 min"
+              image="https://img.youtube.com/vi/IvtZBUSplr4/maxresdefault.jpg"
+              href="/talks/self-compassion"
             />
             <AudioCard
               title="Emotional Intelligence"
@@ -54,7 +61,7 @@ export default function KnowledgeTalksPage() {
               description="Achieve flow state and maximize focus"
               duration="20 min"
               image="/placeholder.svg?height=200&width=400"
-              href="/talks/deep-work"
+              href="/talks/deep-work-strategies"
             />
             <AudioCard
               title="Stress Management"
@@ -74,14 +81,14 @@ export default function KnowledgeTalksPage() {
               description="Carol Dweck's groundbreaking research on growth mindset"
               duration="10 min"
               image="https://img.youtube.com/vi/_X0mgOOSpLU/maxresdefault.jpg"
-              href="/talks/growth-mindset"
+              href="/talks/power-of-believing"
             />
             <AudioCard
               title="Deep Work Strategies"
               description="Achieve flow state and maximize focus"
               duration="20 min"
               image="/placeholder.svg?height=200&width=400"
-              href="/talks/deep-work"
+              href="/talks/deep-work-strategies"
             />
           </div>
         </TabsContent>
